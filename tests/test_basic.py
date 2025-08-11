@@ -1,12 +1,12 @@
 """Basic tests for the AI GitHub Automation Test #2 project."""
 
+import os
+import sys
 import unittest
 from unittest.mock import patch
-import sys
-import os
 
 # Add src directory to the path so we can import our modules
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 
 class TestBasicFunctionality(unittest.TestCase):
@@ -38,7 +38,7 @@ class TestBasicFunctionality(unittest.TestCase):
             "project": "AI GitHub Automation Test #2",
             "language": "python",
             "ci": True,
-            "version": "1.0.0"
+            "version": "1.0.0",
         }
         self.assertEqual(test_dict["project"], "AI GitHub Automation Test #2")
         self.assertEqual(test_dict["language"], "python")
@@ -55,8 +55,8 @@ class TestBasicFunctionality(unittest.TestCase):
         """Test that we're in the correct environment."""
         # This test ensures we have the basic Python environment
         self.assertIsNotNone(sys.version)
-        self.assertTrue(hasattr(os, 'environ'))
+        self.assertTrue(hasattr(os, "environ"))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
